@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using static Android.Widget.TextView;
 
 namespace App1.Droid
 {
@@ -13,8 +14,9 @@ namespace App1.Droid
 	public class MainActivity : Activity
 	{
 		int count = 1;
-        float zahl1 = -1;
-        float zahl2 = -1;
+        float zahl1 = 0;
+        float zahl2 = 0;
+        float result = 0;
         String operationszeichen = null;
 
 
@@ -27,8 +29,6 @@ namespace App1.Droid
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-
             Button button0 = FindViewById<Button>(Resource.Id.button14);
             Button button1 = FindViewById<Button>(Resource.Id.button9);
             Button button2 = FindViewById<Button>(Resource.Id.button10);
@@ -48,19 +48,62 @@ namespace App1.Droid
             Button buttonSummi = FindViewById<Button>(Resource.Id.button17);
             Button buttonSub = FindViewById<Button>(Resource.Id.button12);
 
+            TextView textView = FindViewById<TextView>(Resource.Id.textView3);
+            textView.SetText("", BufferType.Editable);
             //button.Click += delegate {
             //	button.Text = string.Format ("{0} clicks!", count++);
             //};
 
-            button0.Click += delegate {
-                //button.Text = string.Format("{0} clicks!", count++);
-                if (zahl1 != -1)
-                {
+            button0.Click += delegate {saveNumber(0);};
+            button1.Click += delegate { saveNumber(1); };
+            button2.Click += delegate { saveNumber(2); };
+            button3.Click += delegate { saveNumber(3); };
+            button4.Click += delegate { saveNumber(4); };
+            button5.Click += delegate { saveNumber(5); };
+            button6.Click += delegate { saveNumber(6); };
+            button7.Click += delegate { saveNumber(7); };
+            button8.Click += delegate { saveNumber(8); };
+            button9.Click += delegate { saveNumber(9); };
 
-                }
+            buttonPunkt.Click += delegate { saveNumber(0); };
+
+            buttonDivi.Click += delegate { setOperator("/"); };
+            buttonMulti.Click += delegate { setOperator("-"); };
+            buttonSummi.Click += delegate { setOperator("+"); };
+            buttonSub.Click += delegate { setOperator("-"); };
+
+            buttonEnter.Click += delegate {
+                Calculator c = new Calculator();
+                result = c.Calculate(operationszeichen, zahl1, zahl2);
+                textView.SetText(result.ToString(), BufferType.Editable);
             };
+
+
+
+
+
         }
-	}
+
+        private void saveNumber(int zahl)
+        {
+            if (operationszeichen == null)
+            {
+                zahl1 = zahl;
+            }
+            else
+            {
+                zahl2 = zahl;
+            }
+        }
+
+        private void setOperator(String zeichen)
+        {
+            operationszeichen = zeichen;
+        }
+
+
+        
+    }
 }
 
 
