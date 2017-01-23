@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,84 +23,109 @@ namespace App1.Windows
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private String operationszeichen;
+        private int zahl1;
+        private int zahl2;
+        private object result;
+
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        private void button_Copy2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button1_Copy2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button2_Copy2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button3_Copy2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button_Copy1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button1_Copy1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button3_Copy1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button1_Copy_Click(object sender,RoutedEventArgs e)
-        {
-
-        }
-
-        private void button2_Copy_Click(object sender,RoutedEventArgs e)
-        {
-
-        }
-
-        private void button3_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            saveNumber(7);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-
+            saveNumber(8);
         }
-
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            saveNumber(9);
+        }
 
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(4);
+        }
+        private void button1_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(5);
+        }
+        private void button2_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(6);
+        }
+
+        private void button_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(1);
+        }
+        private void button1_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(2);
+        }
+        private void button2_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(3);
+        }
+        private void button_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            saveNumber(0);
+        }
+
+        private void button1_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void button3_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            Calculator c = new Calculator();
+            result = c.Calculate(operationszeichen, zahl1, zahl2);
+            textBox.Text = result.ToString();
+            //textView.SetText(result.ToString(), BufferType.Editable);
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
-        {                                                         
-
+        {
+            setOperator("/");
         }
+        private void button3_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            setOperator("*");
+        }
+        private void button3_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            setOperator("-");
+        }
+        private void button2_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            setOperator("+");
+        }
+
+
+
+        private void saveNumber(int zahl)
+        {
+            if (operationszeichen == null)
+            {
+                zahl1 = zahl;
+            }
+            else
+            {
+                zahl2 = zahl;
+            }  
+        }
+
+        private void setOperator(String zeichen)
+        {
+            operationszeichen = zeichen;
+        }
+
+
+
     }
 }
