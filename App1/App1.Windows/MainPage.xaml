@@ -26,7 +26,7 @@
             <Button x:Name="button2_Copy2" Content="+" HorizontalAlignment="Left" Margin="150,121,0,0" VerticalAlignment="Top" Width="65" Click="button2_Copy2_Click"/>
             <Button x:Name="button3_Copy2" Content="Enter" HorizontalAlignment="Left" Margin="220,121,0,0" VerticalAlignment="Top" Width="65" Click="button3_Copy2_Click"/>
         </Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="130" Width="275" FontSize="72"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="275" FontSize="72"/>
 
     </Grid>
 </Page>

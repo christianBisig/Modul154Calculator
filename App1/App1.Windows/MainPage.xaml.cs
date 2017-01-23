@@ -24,13 +24,16 @@ namespace App1.Windows
     public sealed partial class MainPage : Page
     {
         private String operationszeichen;
-        private int zahl1;
-        private int zahl2;
+        private float zahl1;
+        private float zahl2;
         private object result;
+
+        
 
         public MainPage()
         {
             this.InitializeComponent();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -86,7 +89,10 @@ namespace App1.Windows
             Calculator c = new Calculator();
             result = c.Calculate(operationszeichen, zahl1, zahl2);
             textBox.Text = result.ToString();
-            //textView.SetText(result.ToString(), BufferType.Editable);
+
+            operationszeichen = null;
+            zahl1 = 0;
+            zahl2 = 0;
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
@@ -107,25 +113,26 @@ namespace App1.Windows
         }
 
 
-
         private void saveNumber(int zahl)
         {
             if (operationszeichen == null)
             {
-                zahl1 = zahl;
+                zahl1 = zahl1 * 10 + zahl;
+                textBox.Text = zahl1.ToString();
             }
             else
             {
-                zahl2 = zahl;
-            }  
+                zahl2 = zahl2 * 10 + zahl;
+                textBox.Text = zahl2.ToString();
+            }
         }
 
         private void setOperator(String zeichen)
         {
+            
             operationszeichen = zeichen;
+            textBox.Text = operationszeichen.ToString();
         }
-
-
 
     }
 }

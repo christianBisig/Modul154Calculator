@@ -76,6 +76,9 @@ namespace App1.Droid
                 Calculator c = new Calculator();
                 result = c.Calculate(operationszeichen, zahl1, zahl2);
                 textView.SetText(result.ToString(), BufferType.Editable);
+                operationszeichen = null;
+                zahl1 = 0;
+                zahl2 = 0;
             };
 
 
@@ -88,17 +91,23 @@ namespace App1.Droid
         {
             if (operationszeichen == null)
             {
-                zahl1 = zahl;
+                TextView textView = FindViewById<TextView>(Resource.Id.textView3);
+                zahl1 = zahl1 *10 + zahl;
+                textView.SetText(zahl1.ToString(), BufferType.Editable);
             }
             else
             {
-                zahl2 = zahl;
+                TextView textView = FindViewById<TextView>(Resource.Id.textView3);
+                zahl2 = zahl2 *10 + zahl;
+                textView.SetText(zahl2.ToString(), BufferType.Editable);
             }
         }
 
         private void setOperator(String zeichen)
         {
+            TextView textView = FindViewById<TextView>(Resource.Id.textView3);
             operationszeichen = zeichen;
+            textView.SetText(operationszeichen.ToString(), BufferType.Editable);
         }
 
 
