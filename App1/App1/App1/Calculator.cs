@@ -18,7 +18,7 @@ namespace App1
                     return Subtraction(Number1, Number2);
                 case "*":
                     return Multiplication(Number1, Number2);
-                case ":":
+                case "/":
                     return Division(Number1, Number2);
             }
             throw new Exception("Not Recognized Operation");

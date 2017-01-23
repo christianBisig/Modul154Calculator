@@ -13,7 +13,6 @@ namespace App1.Droid
 	[Activity (Label = "App1.Droid", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
         float zahl1 = 0;
         float zahl2 = 0;
         float result = 0;
@@ -68,7 +67,7 @@ namespace App1.Droid
             buttonPunkt.Click += delegate { saveNumber(0); };
 
             buttonDivi.Click += delegate { setOperator("/"); };
-            buttonMulti.Click += delegate { setOperator("-"); };
+            buttonMulti.Click += delegate { setOperator("*"); };
             buttonSummi.Click += delegate { setOperator("+"); };
             buttonSub.Click += delegate { setOperator("-"); };
 

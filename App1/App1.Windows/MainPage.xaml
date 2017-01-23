@@ -19,7 +19,7 @@
             <Button x:Name="button3_Copy" Content="*" HorizontalAlignment="Left" Margin="220,47,0,0" VerticalAlignment="Top" Width="65" Click="button3_Copy_Click"/>
             <Button x:Name="button_Copy1" Content="1" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="65" Click="button_Copy1_Click"/>
             <Button x:Name="button1_Copy1" Content="2" HorizontalAlignment="Left" Margin="80,84,0,0" VerticalAlignment="Top" Width="65" Click="button1_Copy1_Click"/>
-            <Button x:Name="button2_Copy1" Content="3" HorizontalAlignment="Left" Margin="150,84,0,0" VerticalAlignment="Top" Width="65"/>
+            <Button x:Name="button2_Copy1" Content="3" HorizontalAlignment="Left" Margin="150,84,0,0" VerticalAlignment="Top" Width="65" Click="button2_Copy1_Click" />
             <Button x:Name="button3_Copy1" Content="-" HorizontalAlignment="Left" Margin="220,84,0,0" VerticalAlignment="Top" Width="65" Click="button3_Copy1_Click"/>
             <Button x:Name="button_Copy2" Content="0" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="65" Click="button_Copy2_Click"/>
             <Button x:Name="button1_Copy2" Content="." HorizontalAlignment="Left" Margin="80,121,0,0" VerticalAlignment="Top" Width="65" Click="button1_Copy2_Click"/>
